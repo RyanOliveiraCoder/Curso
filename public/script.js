@@ -1,9 +1,10 @@
-function searchCourses() {
+function searchCourses() {  
     const searchInput = document.getElementById('search').value.toLowerCase();
     const courses = document.querySelectorAll('.card'); // Seleciona todos os cards de curso
 
     courses.forEach(course => {
-        const courseTitle = course.querySelector('a').textContent.toLowerCase(); // Pega o texto do link do curso
+        const courseTitle = course.querySelector('h3').textContent.toLowerCase(); // Pega o texto do link do curso
+        const courseDescription = course.querySelector('p').textContent.toLowerCase();
 
         if (courseTitle.includes(searchInput)) {
             course.style.display = ''; // Mostra o card se a busca corresponder ao título do curso
